@@ -1,0 +1,31 @@
+\documentclass{standalone}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_y}{T}$, ylabel style={at={(0,1.0)}},
+ymin=0, ymax=2,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={0,1,2},
+xtick={0,0.5,1.0},
+legend entries={$a/d_1=2.2$, $a/d_1=2.5$}, legend style={at={(0.5,1)},anchor=north},title={$\sigma=0.38;\sigma_j=0.21;G_j/G=25;d_2/d_1=0.75$}]
+\addplot[black,very thick,solid,smooth,mark=ball] table[x=x, y=sig_y] {inc13-a22-d75-g25-t2-cd.txt};
+\addplot[black,very thick,solid,smooth,mark=square*] table[x=x, y=sig_y] {inc13-a25-d75-g25-t2-cd.txt};
+%\addplot[black,very thick,solid,smooth,mark=triangle*] table[x=x, y=sig_x] {inc13-a30-d75-t2.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

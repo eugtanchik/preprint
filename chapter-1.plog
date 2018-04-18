@@ -1,0 +1,17 @@
+Chikrii Softlab pseudoTeX 3.0 report.
+http://www.chikrii.com, mailto: support@chikrii.com
+
+chapter-1.tex (Ln 4) Syntax Error: Undefined control sequence (\begin)
+chapter-1.tex (Ln 5) Syntax Error: Undefined control sequence (\chapter)
+chapter-1.tex (Ln 7) Syntax Error: Undefined control sequence (\section)
+chapter-1.tex (Ln 9) Syntax Error: Undefined control sequence (\sectionmark)
+chapter-1.tex (Ln 11) Syntax Error: Undefined control sequence (\)
+chapter-1.tex (Ln 16) Syntax Error: Undefined control sequence (\begin)
+chapter-1.tex (Ln 16) Syntax Error: Undefined control sequence (\label)
+chapter-1.tex (Ln 17) Syntax Error: Missing $ inserted
+chapter-1.tex (Ln 17) Syntax Error: Undefined control sequence (\begin)
+chapter-1.tex (Ln 18) Syntax Error: Undefined control sequence (\\)
+chapter-1.tex (Ln 19) Syntax Error: Undefined control sequence (\\)
+chapter-1.tex (Ln 21) Syntax Error: Missing $ inserted
+chapter-1.tex (Ln 21) Warning: Missing } inserted
+chapter-1.tex (Ln 21) Warning: Missing \right. inserted

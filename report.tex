@@ -1,0 +1,126 @@
+\documentclass[report,14pt,russian,small,openany]{ncc}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[left=20mm,right=15mm,top=20mm,bottom=20mm]{geometry}
+\usepackage{nccmath}
+\usepackage{amsfonts,amssymb}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[section,above,below]{placeins}
+\usepackage{afterpage,flafter}
+\usepackage{lastpage}
+\usepackage{morefloats}
+\usepackage{cite}
+\usepackage{float,nccsect}
+
+\usepackage[square,numbers,sort&compress]{natbib}
+
+%\usepackage{xltxtra,fontspec,xunicode}
+%\defaultfontfeatures{Scale=MatchLowercase,Ligatures=TeX}
+%\setromanfont[Numbers=Uppercase,Ligatures=TeX]{Times New Roman}
+
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}
+\rhead{\thepage}
+\chead{}
+\lfoot{}
+\rfoot{}
+\cfoot{}
+
+\DeclareSection*{0}{chapter}{\bf\normalsize}%
+{3.5ex plus 1ex minus .2ex}%
+{2.3ex plus .2ex}{
+\thispagestyle{fancy}
+\bf\normalsize\MakeUppercase}
+
+\DeclareSection*{1}{section}{}%
+{3.5ex plus 1ex minus .2ex}%
+{2.3ex plus .2ex}{\bf\normalsize}
+
+\newfloat{program}{tp}{lop}[chapter]
+\floatname{program}{Program}
+\RegisterFloatType{program}
+\DeclareSection{-3}{program}{\bff Табл.}{0pt}{0pt}{\small}
+\DeclareTOCEntry{-3}{}{}{9.9}{}
+
+%\DeclareSection{-2}{table}{}{0pt}{10pt}{}
+%\DeclareSection{-1}{figure}{}{10pt}{0pt}{}
+
+\NumberlineSuffix{\quad}{\enskip}
+
+\SectionTagSuffix{\quad}
+
+\setcounter{totalnumber}{10}
+\setcounter{topnumber}{10}
+\setcounter{page}{2}
+
+\begin{document}
+
+\begin{titlepage}
+\titlehead{
+\begin{flushleft}
+УДК 539.3-517.946 \\
+№ ГР: 0112U002135 \\
+Инв. №
+\end{flushleft}
+МИНИСТЕРСТВО ОБРАЗОВАНИЯ И НАУКИ УКРАИНЫ \\
+НАЦИОНАЛЬНЫЙ АЭРОКОСМИЧЕСКИЙ УНИВЕРСИТЕТ \\ 
+им. Н.Е. ЖУКОВСКОГО ``ХАИ'' \\
+\vskip14pt 61070, г. Харьков, ул. Чкалова, 17; тел. (057) 788--40--00
+\begin{flushright}
+УТВЕРЖДАЮ \\
+Проректор по НР ХАИ\\
+д-р техн. наук, проф. \\
+\underline{\hskip3cm}\; А. Гайдачук \\
+2015.01.\underline{\hskip1cm}
+\end{flushright}
+}
+\titlefoot{2014}
+\title{\normalsize\rm ОТЧЕТ \\
+О НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ РАБОТЕ \\
+\vskip14pt {\bf НОВЫЕ МЕТОДЫ ИССЛЕДОВАНИЯ ЛИНЕЙНО И НЕЛИНЕЙНО ДЕФОРМИРУЕМЫХ ТЕЛ ИЗ КОМПОЗИЦИОННЫХ МАТЕРИАЛОВ} \\
+\vskip14pt {\bf ПОСТРОЕНИЕ ПЕРИОДИЧЕСКИХ И СТОХАСТИЧЕСКИХ ЛИНЕЙНЫХ МОДЕЛЕЙ МАТЕРИАЛОВ С ПОРАМИ И КОМПОЗИЦИОННЫХ МАТЕРИАЛОВ} \\
+(заключительный) \\
+Г405~--- 16/2012--Ф \\
+\vskip14pt ТОМ 1
+}
+\titlecomment{\vskip4cm\normalsize
+\begin{flushleft}
+Руководитель НР \\
+д-р физ.-мат. наук, профессор \hskip7cm А. Николаев
+\end{flushleft}
+\begin{flushright}
+Рукопись закончена 25 декабря 2014~г.
+\end{flushright}
+}
+%\author{}
+\maketitle
+\end{titlepage}
+
+\sectionstyle{center}
+\indentaftersection
+%\sectiontagsuffix{\;}
+%\captiontagsuffix{~---~}
+
+\include{authors}
+\include{referat}
+
+\renewcommand{\contentsname}{\centerline{CОДЕРЖАНИЕ}}
+\tableofcontents
+%\enlargethispage{2\baselineskip}
+
+\include{intro-r}
+\include{chapter-1r}
+%\include{chapter-7}
+%\include{chapter-8}
+%\include{chapter-9}
+%\include{chapter-10}
+\include{chapter-11r}
+\include{chapter-12r}
+\include{chapter-13r}
+\include{conclusion-r}
+\include{bibliography-r}
+
+\end{document}

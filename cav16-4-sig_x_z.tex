@@ -1,0 +1,38 @@
+\documentclass{standalone}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+%ylabel=$\dfrac{\sigma_y}{T}$, ylabel style={at={(0,1.0)}},
+ymin=-0.5, ymax=0.5,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={-0.5,0,0.5},
+xtick={0,0.5,1.0},
+legend style={%
+        at={(0.5,0.2)},
+        anchor=north,
+        legend columns=2,
+        font=\footnotesize,
+    },
+legend entries={$\sigma_x/T{,}\quad N=16$, $\sigma_x/T{,}\quad N=4$, $\sigma_z/T{,}\quad N=16$, $\sigma_z/T{,}\quad N=4$},title={$h/R_0=1.0;a/R=1.5;\sigma=0.38;$}]
+\addplot[black,very thick,solid,smooth,mark=triangle*] table[x=x, y=sig_x] {cav16-a15-h10-r10-z0.txt};
+\addplot[black,very thick,solid,smooth,mark=o] table[x=x, y=sig_x] {cav4-a15-h10-r10-z0.txt};
+\addplot[black,very thick,solid,smooth,mark=square*] table[x=x, y=sig_z] {cav16-a15-h10-r10-z0.txt};
+\addplot[black,very thick,solid,smooth,mark=ball] table[x=x, y=sig_z] {cav4-a15-h10-r10-z0.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

@@ -1,0 +1,179 @@
+%!TEX TS-program = lualatex
+\documentclass[book,14pt,small,twoside]{ncc}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\usepackage[left=18mm,right=18mm,top=25mm,bottom=20mm]{geometry}
+\usepackage{nccmath}
+\usepackage{amsfonts,amssymb}
+\usepackage{hyperref}
+\usepackage{nccfancyhdr}
+\usepackage[section,above,below]{placeins}
+\usepackage{afterpage,flafter}
+\usepackage{lastpage}
+\usepackage{morefloats}
+\usepackage{cite}
+\usepackage{float,nccsect}
+
+\usepackage[square,numbers,sort&compress]{natbib}
+
+\usepackage{xltxtra,xunicode}
+\defaultfontfeatures{Scale=MatchUppercase,Ligatures=TeX}
+\setromanfont[Numbers=Uppercase,Ligatures=TeX]{Arial}
+\setmainlanguage{english}
+\setotherlanguage{russian}
+
+\renewtheorem{theorem}{Теорема}[theorem]
+
+%\pagestyle{fancy}
+%\renewcommand{\headrulewidth}{0pt}
+%\lhead{}
+%\rhead{\thepage}
+%\chead{}
+%\lfoot{}
+%\rfoot{}
+%\cfoot{}
+
+\DeclareSection*{0}{chapter}{\bf\normalsize}%
+{3.5ex plus 1ex minus .2ex}%
+{2.3ex plus .2ex}{
+\thispagestyle{fancy}
+\bf\normalsize\MakeUppercase}
+
+\DeclareSection*{1}{section}{}%
+{3.5ex plus 1ex minus .2ex}%
+{2.3ex plus .2ex}{\bf\normalsize}
+
+%\newfloat{program}{tp}{lop}[chapter]
+%\floatname{program}{Program}
+%\RegisterFloatType{program}
+%\DeclareSection{-3}{program}{\bff Табл.}{0pt}{0pt}{}
+%\DeclareTOCEntry{-3}{}{}{9.9}{}
+
+%\DeclareSection{-2}{table}{}{0pt}{10pt}{}
+%\DeclareSection{-1}{figure}{\bff Рис.}{10pt}{0pt}{}
+%\DeclareSection{-1}{theorem}{\bff Теорема}{10pt}{0pt}{}
+
+%\NumberlineSuffix{.}{\enskip}
+
+%\SectionTagSuffix{.\quad}
+
+\setcounter{totalnumber}{10}
+\setcounter{topnumber}{10}
+\setcounter{page}{3}
+
+\begin{document}
+
+\mathversion{bold}
+\sectionstyle{center}
+\indentaftersection
+\sectiontagsuffix{.\;}
+%\captiontagsuffix{~---~}
+
+\setyear{2014}
+\titlehead{МИНИСТЕРСТВО ОБРАЗОВАНИЯ И НАУКИ УКРАИНЫ \\
+Национальный аэрокосмический университет им.~Н.~Е.~Жуковского \\
+``Харьковский авиационный институт''}
+\titlefoot{Харьков ``ХАИ''\;\theyear}
+\author{А.~Г.~Николаев, Е.~А.~Танчик}
+\title{УПРУГАЯ МЕХАНИКА МНОГОКОМПОНЕНТНЫХ ТЕЛ}
+\maketitle
+\titlehead{}
+\titlefoot{\theyear}
+\author{А.~Г.~Николаев, Е.~А.~Танчик}
+\title{УПРУГАЯ МЕХАНИКА МНОГОКОМПОНЕНТНЫХ ТЕЛ}
+\maketitle
+\abstractstyle{
+\small
+%\footnotesize
+}
+\bibindex{УДК 539.3\\ ББК 22.2\par\pbox[lt]{Н 63}}
+\copyrighttable{ISBN 978-966-662-369-3}{\item Николаев~А.~Г., Танчик~Е.~А., \theyear \\ \item Национальный аэрокосмический университет \\ им.~Н.~Е.~Жуковского ``Харьковский авиационный институт'', \theyear}
+\begin{abstract}
+\begin{russian}
+Уперше у вітчизняній і зарубіжній монографічній літературі досліджено проблему визначення полів напружень і деформацій у багатозв'язних просторових тілах з великим числом компонент зв'язності. Для її вирішення використано узагальнений метод Фур'є, який отримав подальший розвиток у цій монографії. Розглянуто тіла з неоднорідностями у вигляді однаково орієнтованих циліндричних, сферичних, витягнутих і стислих сфероїдальних порожнин або включень. Основну увагу приділено кількісному і якісному аналізу напружень в зонах їх найбільшої концентрації в зазначених багатокомпонентних тілах залежно від геометричних і механічних характеристик неоднорідностей і типу їхніх упаковок. Розглянуто також задачі з періодичними системами порожнин і включень. Отримані результати використано для визначення ефективних пружних модулів зернистих пористих і композиційних матеріалів.
+
+Для науковців, викладачів, аспірантів, магістрантів, які цікавляться методами розв'язання крайових задач теорії пружності, механікою пористих і композиційних матеріалів.\sloppy
+\qef
+\begin{desclist}{}{}[Рецензенты:]
+\item[Рецензенты:] чл.-корр. НАН Украины, д-р физ.-мат. наук, проф. А.~Н.~Довбня, \\
+д-р физ.-мат. наук, проф. В.~А.~Дорошенко
+\end{desclist}
+\qef
+Утверждена на заседании ученого совета Национального аэрокосмического университета им.~Н.~Е.~Жуковского ``ХАИ'' в качестве монографии (протокол №10 от 18.06.2014~г.){\sloppy\par}
+\qef
+%\begin{minipage}{0.05\linewidth}
+%Н 63
+%\end{minipage}
+%\begin{minipage}{0.9\linewidth}
+%\fulltitle{Николаев, А.~Г.}{\\ Упругая механика многокомпонентных тел [Текст]: монография / А.~Г.~Николаев, Е.~А.~Танчик.~--- Х.: Нац. аэрокосм. ун-т им.~Н.~Е.~Жуковского ``Харьк. авиац. ин-т'', 2014.~--- 272~с.}
+%\end{minipage}
+%
+%ISBN 978-966-662-369-3
+%\qef
+\noindent\begin{tabular}[t]{lll}
+ & {\bf\normalsize Николаев,~А.~Г.} & \\
+Н 63 & {\normalsize Упругая механика многокомпонентных тел [Текст]: монография / } & \\ & {\normalsize А.~Г.~Николаев, Е.~А.~Танчик.~--- Х.: Нац. аэрокосм. ун-т им.~Н.~Е.~Жуков-} \\ & {\normalsize ского ``Харьк. авиац. ин-т'', 2014.~--- 272~с.} & \\
+& & \\
+& {\normalsize ISBN 978-966-662-369-3} &
+\end{tabular}
+\qef
+%\begin{desclist}{}{}[Н 63]
+%\item[\begin{tabular}{r}[b]{}\\ Н 63\end{tabular}] \fulltitle{Николаев~А.~Г.}{\\ Упругая механика многокомпонентных тел [Текст]: монография / А.~Г.~Николаев, Е.~А.~Танчик.~--- Х.: Нац. аэрокосм. ун-т им.~Н.~Е.~Жуковского ``Харьк. авиац. ин-т'', 2014.~--- 272~с.\\ \\
+%ISBN 978-966-662-369-3}
+%\end{desclist}
+\par Впервые в отечественной и зарубежной монографической литературе исследована проблема определения полей напряжений и деформаций в многосвязных пространственных телах с большим числом компонент связности. Для ее решения использован обобщенный метод Фурье, который получил дальнейшее развитие в настоящей монографии. Рассмотрены тела с неоднородностями в виде одинаково ориентированных цилиндрических, сферических, вытянутых и сжатых сфероидальных полостей или включений. Основное внимание уделено количественному и качественному анализу напряжений в зонах их наибольшей концентрации в указанных многокомпонентных телах в зависимости от геометрических и механических характеристик неоднородностей и типа их упаковок. Рассмотрены также задачи с периодическими системами полостей и включений. Полученные результаты использованы для определения эффективных упругих модулей зернистых пористых и композиционных материалов.
+
+Для научных работников, преподавателей, аспирантов, магистрантов, интересующихся методами решения краевых задач теории упругости, механикой пористых и композиционных материалов.
+\qef
+\begin{minipage}[t]{0.85\linewidth}
+Ил. 392 Табл. 14. Библиогр.: 140 назв.
+\end{minipage}
+\begin{minipage}[t]{0.15\linewidth}
+УДК 539.3\\ ББК 22.2
+\end{minipage}
+%Ил. 392 Табл. 14. Библиогр.: 140 назв.
+\end{russian}
+\end{abstract}
+\author{Ніколаєв Олексій Георгійович \\ Танчік Євген Андрійович \vskip2cm}
+\title{ПРУЖНА МЕХАНІКА БАГАТОКОМПОНЕНТНИХ ТІЛ}
+\titlecomment{(Російською мовою)\par\qef Редактор Л.~О.~Кузьменко}
+\lastpagehead{Наукове видання}
+\lastpageinfo{
+\begin{flushleft}
+Зв. план 2014 \\
+Підписано до друку 30.12.2014 \\
+Формат 60х84 1/16. Папір офс. №2. Офс. друк \\
+Ум. друк. арк. 14,5. Обл.-вид. арк. 16,36. Наклад 100 пр.
+Замовлення 406. Ціна вільна 
+\end{flushleft}
+%Оформлено в системе \LaTeX, макрос \NCC
+}
+{Видавець і виготовлювач \\
+Національний аерокосмічний університет ім.~М.~Є.~Жуковського \\
+``Харківський авіаційний інститут'' \\
+61070, Харків-70, вул.~Чкалова, 17 \\
+http://www.khai.edu \\
+Видавничий центр ``ХАІ'' \\
+61070, Харків-70, вул.~Чкалова, 17 \\
+izdat@khai.edu}
+{Свідоцтво про внесення суб'єкта видавничої справи до Державного реєстру видавців, виготовлювачів і розповсюджувачів видавничої продукції сер.~ДК №391 від 30.03.2001}
+
+
+\include{foreword}
+\include{intro}
+\include{chapter-1}
+\include{chapter-7}
+\include{chapter-8}
+\include{chapter-9}
+\include{chapter-10}
+\include{chapter-11}
+\include{chapter-12}
+%\include{conclusion}
+\include{bibliography}
+\begin{russian}
+\tableofcontents
+\end{russian}
+\makelastpage
+\end{document}

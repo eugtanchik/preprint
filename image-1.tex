@@ -1,0 +1,38 @@
+\documentclass{standalone}
+    \usepackage{tikz}
+    \usepackage{pgfplots}
+    \usepackage{amsmath}
+    \usetikzlibrary{patterns}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_\rho}{T}$,
+ymin=0, ymax=1.0,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={0,0.5,1.0},
+xtick={0,0.5,1.0},
+legend style={%
+        at={(.99,0.99)},
+        anchor=north east,
+        legend columns=2,
+        font=\footnotesize,
+    },
+legend entries={$1$, $2$, $3$, $4$, $5$, $6$}, legend style={at={(1.0,0.85)},anchor=north east},
+title={}]
+\addplot[black,very thick,solid,smooth,mark=ball] table[x=x1, y=y1] {task1.dat};
+\addplot[black,very thick,solid,smooth,mark=square*] table[x=x1, y=y1] {task1-1.dat};
+\addplot[black,very thick,solid,smooth,mark=triangle*] table[x=x1, y=y1] {task1-2.dat};
+\addplot[black,very thick,solid,smooth,mark=diamond*] table[x=x1, y=y2] {task1.dat};
+\addplot[black,very thick,solid,smooth,mark=o] table[x=x1, y=y2] {task1-1.dat};
+\addplot[black,very thick,solid,smooth,mark=x] table[x=x1, y=y2] {task1-2.dat};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

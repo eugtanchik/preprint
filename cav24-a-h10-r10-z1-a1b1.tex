@@ -1,0 +1,36 @@
+\documentclass{standalone}
+	\usepackage[cp1251]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+   	\usetikzlibrary{plotmarks}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_{x(y,z)}}{T}$, ylabel style={at={(-0.05,1.0)}},
+ymin=0, ymax=3,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={-1,0,1,2,3,4},
+xtick={0,0.5,1.0},
+legend columns=2, legend style={/tikz/column 2/.style={ column sep=5pt,},},
+legend entries={$a/R=1.2\quad\sigma_x/T$, $a/R=1.5\quad\sigma_x/T$,$a/R=1.2\quad\sigma_y/T$, $a/R=1.5\quad\sigma_y/T$,$a/R=1.2\quad\sigma_z/T$, $a/R=1.5\quad\sigma_z/T$}, legend style={at={(0.5,-0.15)},anchor=north},title={$h/R_0=1.0;z=h/2;\sigma=0.38$}]
+\addplot[black,very thick,mark=square*,smooth] table[x=x, y=sig_x] {cav24-(2-9)-a12-h10-r10-m10-z1.txt};
+\addplot[black,very thick,mark=ball,smooth] table[x=x, y=sig_x] {cav24-(2-9)-a15-h10-r10-m10-z1.txt};
+\addplot[black,very thick,mark=triangle,smooth] table[x=x, y=sig_y] {cav24-(2-9)-a12-h10-r10-m10-z1.txt};
+\addplot[black,very thick,mark=diamond,smooth] table[x=x, y=sig_y] {cav24-(2-9)-a15-h10-r10-m10-z1.txt};
+\addplot[black,very thick,mark=10-pointed star,smooth] table[x=x, y=sig_z] {cav24-(2-9)-a12-h10-r10-m10-z1.txt};
+\addplot[black,very thick,mark=square,smooth] table[x=x, y=sig_z] {cav24-(2-9)-a15-h10-r10-m10-z1.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

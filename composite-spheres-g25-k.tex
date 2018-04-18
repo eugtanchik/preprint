@@ -1,0 +1,31 @@
+\documentclass{standalone}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$\zeta$,
+ylabel=$\dfrac{K_0}{K}$, 
+ylabel style={at={(0,1.0)}},
+ymin=1, ymax=2,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={1,1.2,1.4,1.6,1.8,2},
+xtick={0,0.1,0.2,0.3,0.4,0.5},legend entries={$\text{Периодическая задача}$, $\text{Одно включение}$}, legend style={at={(0.4,1)},anchor=north},title={$G_j/G=25$}
+]
+\addplot[black,very thick,solid,smooth,mark=ball] table[x=zeta, y=K0] {composite-spheres-g25-k.txt};
+\addplot[black,very thick,solid,smooth,mark=square*] table[x=zeta, y=K1] {composite-spheres-g25-k.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

@@ -1,0 +1,36 @@
+\documentclass{standalone}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+   	\usetikzlibrary{plotmarks}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_{x(y,z)}}{T}$, ylabel style={at={(-0.06,1.0)}},
+ymin=0.25, ymax=1,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={0.25,0.5,0.75,1.0,1.5,2.0},
+xtick={0,0.5,1.0},
+legend columns=2, legend style={/tikz/column 2/.style={ column sep=5pt,},},
+legend entries={$5\,\text{включений}\quad\sigma_x/T$, $25\,\text{включений}\quad\sigma_x/T$, $5\,\text{включений}\quad\sigma_y/T$, $25\,\text{включений}\quad\sigma_y/T$, $5\,\text{включений}\quad\sigma_z/T$, $25\,\text{включений}\quad\sigma_z/T$}, legend style={at={(0.5,-0.15)},anchor=north},title={$a/R=1.8;z=0;\sigma_j=0.21;\sigma=0.38;G_j/G=25$}]
+\addplot[black,very thick,mark=square*,smooth] table[x=x, y=sig_x] {inc5-a18-g25-z0-ab.txt};
+\addplot[black,very thick,mark=ball,smooth] table[x=x, y=sig_x] {inc25-a18-g25-z0-ab.txt};
+\addplot[black,very thick,mark=triangle,smooth] table[x=x, y=sig_y] {inc5-a18-g25-z0-ab.txt};
+\addplot[black,very thick,mark=diamond,smooth] table[x=x, y=sig_y] {inc25-a18-g25-z0-ab.txt};
+\addplot[black,very thick,mark=10-pointed star,smooth] table[x=x, y=sig_z] {inc5-a18-g25-z0-ab.txt};
+\addplot[black,very thick,mark=square,smooth] table[x=x, y=sig_z] {inc25-a18-g25-z0-ab.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

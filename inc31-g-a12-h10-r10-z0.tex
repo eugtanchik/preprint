@@ -1,0 +1,36 @@
+\documentclass{standalone}
+	\usepackage[cp1251]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+   	\usetikzlibrary{plotmarks}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_{x(y,z)}}{T}$, ylabel style={at={(-0.11,1.0)}},
+ymin=0.5, ymax=1.5,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={0,0.5,1.0,1.5,2.0},
+xtick={0,0.5,1.0},
+legend columns=2, legend style={/tikz/column 2/.style={ column sep=5pt,},},
+legend entries={$G_j/G=25\quad\sigma_x/T$, $G_j/G=100\quad\sigma_x/T$,$G_j/G=25\quad\sigma_y/T$, $G_j/G=100\quad\sigma_y/T$,$G_j/G=25\quad\sigma_z/T$, $G_j/G=100\quad\sigma_z/T$}, legend style={at={(0.5,-0.15)},anchor=north},title={$z=0;\sigma_j=0.21;\sigma=0.38;a/R=1.2$}]
+\addplot[black,very thick,mark=square*,smooth] table[x=x, y=sig_x] {inc31-a12-h10-r10-g25-z0.txt};
+\addplot[black,very thick,mark=ball,smooth] table[x=x, y=sig_x] {inc31-a12-h10-r10-g100-z0.txt};
+\addplot[black,very thick,mark=triangle,smooth] table[x=x, y=sig_y] {inc31-a12-h10-r10-g25-z0.txt};
+\addplot[black,very thick,mark=diamond,smooth] table[x=x, y=sig_y] {inc31-a12-h10-r10-g100-z0.txt};
+\addplot[black,very thick,mark=10-pointed star,smooth] table[x=x, y=sig_z] {inc31-a12-h10-r10-g25-z0.txt};
+\addplot[black,very thick,mark=square,smooth] table[x=x, y=sig_z] {inc31-a12-h10-r10-g100-z0.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

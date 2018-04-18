@@ -1,0 +1,102 @@
+\documentclass[convert={ghostscript,gsdevice=tiffg4,
+outext=.tiff,density=1200}]{standalone}
+    \usepackage{tikz}
+    \usepackage{pgfplots}
+    \usetikzlibrary{patterns}
+\mathversion{bold}
+\begin{document}
+\Large
+\begin{tikzpicture}%[scale=1.5]
+\draw[->] (0,0) -- (1.2,0.8) node[anchor=north] {};
+\draw[->] (0,0) -- (0,1.5) node[anchor=east] {$z_j$};
+\draw[->] (0,0) -- (1.5,0) node[anchor=north] {$x_j$};
+
+\node[left] at (0,0) {$O_j$};
+\node[left] at (1.2,1) {$y_j$};
+\node[above right] at (0.85,0) {$A$};
+\node[above left] at (3.15,0) {$B$};
+
+\draw[very thick] (0,0) circle (1.0);
+\draw (0,0) ellipse (1.0 and .5);
+
+\draw[very thick] (3,2) circle (1.0);
+\draw (3,2) ellipse (1.0 and .5);
+
+\draw[very thick] (0,3) circle (1.0);
+\draw (0,3) ellipse (1.0 and .5);
+
+\draw[very thick] (3,5) circle (1.0);
+\draw (3,5) ellipse (1.0 and .5);
+
+
+\draw[very thick] (4,0) circle (1.0);
+\draw (4,0) ellipse (1.0 and .5);
+
+\draw[very thick] (7,2) circle (1.0);
+\draw (7,2) ellipse (1.0 and .5);
+
+\draw[very thick] (4,3) circle (1.0);
+\draw (4,3) ellipse (1.0 and .5);
+
+\draw[very thick] (7,5) circle (1.0);
+\draw (7,5) ellipse (1.0 and .5);
+
+\draw[very thick] (8,0) circle (1.0);
+\draw (8,0) ellipse (1.0 and .5);
+
+\draw[very thick] (11,2) circle (1.0);
+\draw (11,2) ellipse (1.0 and .5);
+
+\draw[very thick] (8,3) circle (1.0);
+\draw (8,3) ellipse (1.0 and .5);
+
+\draw[very thick] (11,5) circle (1.0);
+\draw (11,5) ellipse (1.0 and .5);
+
+\draw[dashed] (0,0) -- (3,2);
+\draw[dashed] (0,0) -- (0,3);
+\draw[dashed] (3,5) -- (3,2);
+\draw[dashed] (0,0) -- (4,0);
+\draw[dashed] (0,3) -- (3,5);
+\draw[dashed] (4,0) -- (4,3);
+\draw[dashed] (4,3) -- (0,3);
+\draw[dashed] (4,3) -- (7,5);
+\draw[dashed] (4,0) -- (7,2);
+\draw[dashed] (7,2) -- (7,5);
+\draw[dashed] (3,2) -- (7,2);
+\draw[dashed] (3,5) -- (7,5);
+\draw[dashed] (4,0) -- (8,0);
+\draw[dashed] (4,3) -- (8,3);
+\draw[dashed] (7,5) -- (11,5);
+\draw[dashed] (7,2) -- (11,2);
+\draw[dashed] (8,0) -- (8,3);
+\draw[dashed] (11,2) -- (11,5);
+\draw[dashed] (8,0) -- (11,2);
+\draw[dashed] (8,3) -- (11,5);
+
+
+\node[circle, fill=black, inner sep=1.2pt] at (0,0) {};
+\node[circle, fill=black, inner sep=1.2pt] at (3,2) {};
+\node[circle, fill=black, inner sep=1.2pt] at (0,3) {};
+\node[circle, fill=black, inner sep=1.2pt] at (3,5) {};
+
+\node[circle, fill=black, inner sep=1.2pt] at (4,0) {};
+\node[circle, fill=black, inner sep=1.2pt] at (7,2) {};
+\node[circle, fill=black, inner sep=1.2pt] at (4,3) {};
+\node[circle, fill=black, inner sep=1.2pt] at (7,5) {};
+
+\node[circle, fill=black, inner sep=1.2pt] at (8,0) {};
+\node[circle, fill=black, inner sep=1.2pt] at (11,2) {};
+\node[circle, fill=black, inner sep=1.2pt] at (8,3) {};
+\node[circle, fill=black, inner sep=1.2pt] at (11,5) {};
+
+\node[circle, fill=black, inner sep=1.2pt] at (1,0) {};
+\node[circle, fill=black, inner sep=1.2pt] at (3,0) {};
+
+\end{tikzpicture}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

@@ -1,0 +1,36 @@
+\documentclass{standalone}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_{x(y,z)}}{T}$, 
+ylabel style={at={(-0.12,1.0)}},
+ymin=-1.5, ymax=0.5,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={-1.5,-1,-0.5,0,0.5,1},
+xtick={0,0.5,1.0},
+legend style={anchor=north,legend columns=2},
+legend entries={$13~\text{включений}~\sigma_x/T$, $9~\text{включений}~\sigma_x/T$, $13~\text{включений}~\sigma_y/T$, $9~\text{включений}~\sigma_y/T$, $13~\text{включений}~\sigma_z/T$, $9~\text{включений}~\sigma_z/T$}, legend style={at={(0.5,-0.15)},anchor=north},title={$\sigma=0.38;\sigma_j=0.21;a/R=2.5;G_j/G=25$}]
+\addplot[black,very thick,solid,smooth,mark=ball] table[x=x, y=sig_x] {inc13-a25-d95-g25-t1-ab.txt};
+\addplot[black,very thick,solid,smooth,mark=square*] table[x=x, y=sig_x] {inc9-a25-d95-g25-t1.txt};
+\addplot[black,very thick,solid,smooth,mark=triangle*] table[x=x, y=sig_y] {inc13-a25-d95-g25-t1-ab.txt};
+\addplot[black,very thick,solid,smooth,mark=diamond*] table[x=x, y=sig_y] {inc9-a25-d95-g25-t1.txt};
+\addplot[black,very thick,solid,smooth,mark=x] table[x=x, y=sig_z] {inc13-a25-d95-g25-t1-ab.txt};
+\addplot[black,very thick,solid,smooth,mark=o] table[x=x, y=sig_z] {inc9-a25-d95-g25-t1.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

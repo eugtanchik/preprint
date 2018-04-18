@@ -1,0 +1,30 @@
+\documentclass{standalone}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_x}{T}$, ylabel style={at={(-0.04,1.0)}},
+ymin=0.5, ymax=1.25,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={0.5,0.75,1,1.25},
+xtick={0,0.5,1.0},
+legend entries={$5~\text{включений}$, $4~\text{включения}$}, legend style={at={(0.5,0.95)},anchor=north},title={$a/R=2.0;\sigma_j=0.21;\sigma=0.38;G_j/G=25$}]
+\addplot[black,very thick,mark=square*,smooth] table[x=x, y=sig_x] {inc5-a20-g25-z0-ab.txt};
+\addplot[black,very thick,mark=ball,smooth] table[x=x, y=sig_x] {inc4-a20-h10-r10-g25-z0.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

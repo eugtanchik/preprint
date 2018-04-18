@@ -1,0 +1,147 @@
+%!TEX TS-program = pdflatex
+\documentclass[book,14pt,small,oneside]{ncc}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian, ukrainian]{babel}
+%\usepackage[left=18mm,right=18mm,top=25mm,bottom=20mm]{geometry}
+\usepackage[
+  a4paper, mag=1000,
+  left=2.5cm, right=1cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm
+]{geometry}
+\usepackage{nccmath}
+\usepackage{amsfonts,amssymb}
+\usepackage{hyperref}
+\usepackage{nccfancyhdr}
+\usepackage[section,above,below]{placeins}
+\usepackage{afterpage,flafter}
+\usepackage{lastpage}
+\usepackage{morefloats}
+\usepackage{cite}
+\usepackage{float,nccsect}
+
+\usepackage[square,numbers,sort&compress]{natbib}
+
+%\usepackage{xltxtra,xunicode}
+%\defaultfontfeatures{Scale=MatchUppercase,Ligatures=TeX}
+%\setromanfont[Numbers=Uppercase,Ligatures=TeX]{Arial}
+%\setmainlanguage{english}
+%\setotherlanguage{russian}
+
+\renewtheorem{theorem}{Теорема}[theorem]
+
+\pagestyle{plain}
+%\renewcommand{\headrulewidth}{0pt}
+%\lhead{}
+%\rhead{\thepage}
+%\chead{}
+%\lfoot{}
+%\rfoot{}
+%\cfoot{}
+
+%\DeclareSection*{0}{chapter}{\bf\normalsize}%
+%{3.5ex plus 1ex minus .2ex}%
+%{2.3ex plus .2ex}{
+%\thispagestyle{fancy}
+%\bf\normalsize\MakeUppercase}
+%
+%\DeclareSection*{1}{section}{}%
+%{3.5ex plus 1ex minus .2ex}%
+%{2.3ex plus .2ex}{\bf\normalsize}
+
+%\newfloat{program}{tp}{lop}[chapter]
+%\floatname{program}{Program}
+%\RegisterFloatType{program}
+%\DeclareSection{-3}{program}{\bff Табл.}{0pt}{0pt}{}
+%\DeclareTOCEntry{-3}{}{}{9.9}{}
+
+%\DeclareSection{-2}{table}{}{0pt}{10pt}{}
+%\DeclareSection{-1}{figure}{\bff Рис.}{10pt}{0pt}{}
+%\DeclareSection{-1}{theorem}{\bff Теорема}{10pt}{0pt}{}
+
+%\NumberlineSuffix{.}{\enskip}
+
+%\SectionTagSuffix{.\quad}
+
+\setcounter{totalnumber}{10}
+\setcounter{topnumber}{10}
+%\setcounter{page}{1}
+\linespread{1.3}
+
+\begin{document}
+
+%\mathversion{bold}
+\sectionstyle{center}
+\indentaftersection
+\sectiontagsuffix{.\;}
+%\captiontagsuffix{~---~}
+
+%\setyear{2015}
+%\titlehead{Национальный аэрокосмический университет им.~Н.~Е.~Жуковского ``ХАИ''}
+%\titlefoot{Харьков~--- \theyear}
+%\author{Е.~А.~Танчик}
+%\title{Упругая механика многокомпонентных тел}
+%\maketitle
+\begin{titlepage}
+\begin{center}
+%Национальный аэрокосмический университет им.~Н.~Е.~Жуковского ``ХАИ''
+Національний аерокосмічний університет ім.~М.~Є.~Жуковського ``ХАІ''
+\end{center}
+\vskip1cm
+\begin{flushright}
+%На правах рукописи \\
+%УДК 539.3
+На правах рукопису \\
+УДК 539.3
+\end{flushright}
+\vskip2cm
+\begin{center}
+\large 
+%Танчик Евгений Андреевич
+Танчік Євген Андрійович
+\end{center}
+\vskip1cm
+\begin{center}
+\huge\bf 
+%Пространственные задачи теории упругости для~некоторых классов неосесимметричных многосвязных тел
+Просторові задачі теорії пружності для~деяких класів неосесиметричних багатозв'язних тіл
+\end{center}
+\vskip1cm
+\begin{center}
+%01.02.04~--- Механика деформированного твердого тела
+01.02.04~--- Механіка деформованого твердого тіла
+\end{center}
+\vskip1cm
+\begin{center}
+%ДИССЕРТАЦИЯ \\
+%на соискание ученой степени \\
+%кандидата физико-математических наук
+ДИСЕРТАЦІЯ \\
+на здобуття наукового ступеня \\
+кандидата фізико-математичних наук
+\end{center}
+\vskip2cm
+\begin{flushright}
+%Научный руководитель \\
+%д.~ф.-м.~н., проф. \\
+%Николаев Алексей Георгиевич
+Науковий керівник \\
+д.~ф.-м.~н., проф. \\
+Ніколаєв Олексій Георгійович
+\end{flushright}
+\vskip2cm
+\begin{center}
+%Харьков~--- 2015
+Харків~--- 2017
+\end{center}
+\end{titlepage}
+\tableofcontents
+
+\include{i-ukr}
+\include{1}
+%\include{2}
+%\include{3}
+%\include{4}
+%%\include{5}
+%\include{c}
+\include{bibliography-1}
+\end{document}

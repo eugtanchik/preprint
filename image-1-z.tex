@@ -1,0 +1,28 @@
+\documentclass{standalone}
+    \usepackage{tikz}
+    \usepackage{pgfplots}
+    \usepackage{amsmath}
+    \usetikzlibrary{patterns}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_z}{T}$,
+ymin=-1.0, ymax=1.0,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={-1.0,0,1.0},
+xtick={0,0.5,1.0},
+legend entries={$1$, $2$}, legend style={at={(0.5,1.0)},anchor=north},
+title={}]
+\addplot[black,very thick,solid,smooth,mark=ball] table[x=x1, y=y1] {task1-z.dat};
+\addplot[black,very thick,solid,smooth,mark=square*] table[x=x1, y=y2] {task1-z.dat};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

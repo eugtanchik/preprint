@@ -1,0 +1,33 @@
+\documentclass{standalone}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+	\usepackage{siunitx}
+\mathversion{bold}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_z}{T}$, ylabel style={at={(-0.02,1.0)}},
+ymin=-0.5, ymax=0.5,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={-0.5,0,0.5},
+xtick={0,0.5,1.0},
+%yticklabels={$0$,$\num{0.125}$,$\num{0.25}$},
+legend entries={$a/d_1=2.2$, $a/d_1=2.5$, $a/d_1=2.8$}, legend style={at={(0.5,1.0)},anchor=north},title={$\sigma=0.38;d_2/d_1=0.75$}]
+\addplot[black,very thick,solid,smooth,mark=ball] table[x=x, y=sig_z] {cav8-a22-d75-t2-ab.txt};
+\addplot[black,very thick,solid,smooth,mark=square*] table[x=x, y=sig_z] {cav8-a25-d75-t2-ab.txt};
+\addplot[black,very thick,solid,smooth,mark=triangle*] table[x=x, y=sig_z] {cav8-a28-d75-t2-ab.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

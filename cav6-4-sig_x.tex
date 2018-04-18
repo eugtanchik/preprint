@@ -1,0 +1,30 @@
+\documentclass{standalone}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{\sigma_x}{T}$, ylabel style={at={(0,1.0)}},
+ymin=0, ymax=0.5,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={0,0.25,0.5},
+xtick={0,0.5,1.0},
+legend entries={$\text{Гексагональная структура}$, $\text{Тетрагональная структура}$}, legend style={at={(0.5,1.0)},anchor=north},title={$h/R_0=1.0;\sigma=0.38;a/R=1.5$}]
+\addplot[black,very thick,solid,smooth,mark=ball] table[x=x, y=sig_x] {cav6-a15-h10-r10-z0.txt};
+\addplot[black,very thick,solid,smooth,mark=square*] table[x=x, y=sig_x] {cav4-a15-h10-r10-z0.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

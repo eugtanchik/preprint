@@ -1,0 +1,29 @@
+\documentclass{standalone}
+	\usepackage[utf8]{inputenc}
+	\usepackage[T2A]{fontenc}
+	\usepackage[english,russian]{babel}
+	\usepackage{tikz}
+	\usepackage{pgfplots}
+   	\usepackage{amsmath}
+   	\usetikzlibrary{patterns}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$\dfrac{E^*}{E_0}$, 
+ylabel style={at={(0,1.0)}},
+ymin=0.92, ymax=0.95,
+grid=major,
+y label style={rotate=-90,anchor=west},
+grid style={black, thin},
+ytick={0.7,0.8,0.9,1},
+xtick={0,0.1,0.2,0.3,0.4}]
+\addplot[black,very thick,solid,smooth,mark=ball] table[x=cp, y=e] {porous-spheres-1.txt};
+\end{axis}
+\end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
